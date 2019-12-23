@@ -14,7 +14,7 @@ class Menu extends React.Component{
                     <Nav className="mr-auto">
                         <Nav.Link href="#home">What is Swagnuke</Nav.Link>
                         <Nav.Link href="#link">Markdown Overview</Nav.Link>
-                        <Nav.Link href="#link">Fork me on Github</Nav.Link>
+                        <Nav.Link href="#github">Fork me on Github</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
