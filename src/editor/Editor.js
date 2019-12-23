@@ -55,15 +55,12 @@ class Editor extends React.Component{
                     </Col>
                 </Row>
                 <Row>
-                    <Col className={'col-style'}>
-                        Markdown
-                    </Col>
-                    <Col className={'col-style'}>
-                        Preview
-                    </Col>
-                </Row>
-                <Row>
-                    <Col className={'col-style-editor'}>
+                    <Col className={'col-style-editor'} sm>
+
+                        <div className={'editor-header'}>
+                            Markdown
+                        </div>
+
                         <AceEditor
                             mode="markdown"
                             theme="textmate"
@@ -78,7 +75,12 @@ class Editor extends React.Component{
                             style={{height: "90vh", overflowY: 'auto', maxHeight: "80vh", width: "100%"}}
                         />
                     </Col>
-                    <Col className={'col-style-editor'}>
+                    <Col className={'col-style-editor'} sm>
+
+                        <div className={'editor-header'}>
+                            Preview
+                        </div>
+
                         <div
                             className={'markdown-body'}
                             dangerouslySetInnerHTML={{__html: this.state.html}}
