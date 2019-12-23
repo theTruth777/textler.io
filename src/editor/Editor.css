@@ -20,6 +20,11 @@
     border-left:0px;
 }
 
+.markdown-body {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
 .button-style {
     height: 31px;
     margin-left: 10px;
