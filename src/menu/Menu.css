@@ -1,0 +1,9 @@
+.form-control:focus {
+    border-color: #ced4da!important;
+    box-shadow: none!important;
+}
+
+#mainMenu {
+    margin-bottom:25px;
+    color: #ffffff!important;
+}

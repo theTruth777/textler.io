@@ -1,0 +1,19 @@
+#bg-nested-dropdown {
+    margin-bottom:25px;
+}
+
+.col-style {
+    padding: 15px;
+    font-size: 12px;
+    border: 1px solid rgba(186, 186, 186, 0.53);
+    color: rgba(33, 33, 33, 0.85);
+}
+
+.col-style-editor {
+    border: 1px solid rgba(186, 186, 186, 0.53);
+}
+
+.button-style {
+    height: 31px;
+    margin-left: 10px;
+}
