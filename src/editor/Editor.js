@@ -32,25 +32,25 @@ class Editor extends React.Component{
         return (
             <Container fluid={true}>
                 <Row>
-                    <Col>
+                    <Col sm>
                         <ButtonToolbar>
                             <DropdownButton size="sm" as={ButtonGroup} title="Export Markup as..." id="bg-nested-dropdown" variant="success">
                                 <Dropdown.Item eventKey="1">HTML</Dropdown.Item>
                                 <Dropdown.Item eventKey="2">PDF</Dropdown.Item>
                             </DropdownButton>
 
-                            <Button variant="dark" size="sm" className={'button-style'}>
+                            <Button variant="dark" size="sm" className={'button-style'} >
                                 Save session
                             </Button>
 
-                            <Button variant="danger" size="sm" className={'button-style'}>
+                            <Button variant="danger" size="sm" className={'button-style'} onClick={element => {this.resetEditor(element)}}>
                                 Reset document
                             </Button>
 
                         </ButtonToolbar>
 
                     </Col>
-                    <Col>
+                    <Col sm>
                         Word Count
                     </Col>
                 </Row>
@@ -100,6 +100,11 @@ class Editor extends React.Component{
         let mdHtml = this.md.render(value);
         this.setState({html: mdHtml});
         this.setState({value: value});
+    }
+
+    resetEditor(element){
+        console.log(element);
+        this.onChange('');
     }
 }
 
