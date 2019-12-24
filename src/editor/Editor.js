@@ -34,9 +34,10 @@ class Editor extends React.Component{
                 <Row>
                     <Col sm>
                         <ButtonToolbar>
-                            <DropdownButton size="sm" as={ButtonGroup} title="Export Markup as..." id="bg-nested-dropdown" variant="success">
-                                <Dropdown.Item eventKey="1">HTML</Dropdown.Item>
-                                <Dropdown.Item eventKey="2">PDF</Dropdown.Item>
+                            <DropdownButton size="sm" as={ButtonGroup} title="Download as..." id="bg-nested-dropdown" variant="success">
+                                <Dropdown.Item eventKey="1">Markdown</Dropdown.Item>
+                                <Dropdown.Item eventKey="2">HTML</Dropdown.Item>
+                                <Dropdown.Item eventKey="3">PDF</Dropdown.Item>
                             </DropdownButton>
 
                             <Button variant="dark" size="sm" className={'button-style'} >
@@ -67,7 +68,7 @@ class Editor extends React.Component{
                             fontSize={18}
                             enableBasicAutocompletion={false}
                             onChange={value => {
-                                this.onChange(value);
+                                this.onEditorContentChange(value);
                             }}
                             value={this.state.value}
                             name="UNIQUE_ID_OF_DIV"
@@ -93,18 +94,17 @@ class Editor extends React.Component{
     }
 
     componentDidMount() {
-        this.onChange("# Swagnuke \n load here the readme file of swagnuke!");
+        this.onEditorContentChange("# Swagnuke \n load here the readme file of swagnuke!");
     }
 
-    onChange(value) {
+    onEditorContentChange(value) {
         let mdHtml = this.md.render(value);
         this.setState({html: mdHtml});
         this.setState({value: value});
     }
 
     resetEditor(element){
-        console.log(element);
-        this.onChange('');
+        this.onEditorContentChange('');
     }
 }
 
