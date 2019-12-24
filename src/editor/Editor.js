@@ -65,6 +65,7 @@ class Editor extends React.Component{
                         <AceEditor
                             mode="markdown"
                             theme="textmate"
+                            wrapEnabled={true}
                             fontSize={18}
                             enableBasicAutocompletion={false}
                             onChange={value => {
@@ -73,7 +74,7 @@ class Editor extends React.Component{
                             value={this.state.value}
                             name="UNIQUE_ID_OF_DIV"
                             editorProps={{ $blockScrolling: true}}
-                            style={{height: "90vh", overflowY: 'auto', maxHeight: "80vh", width: "100%"}}
+                            style={{height: "70vh", overflowY: 'auto', maxHeight: "80vh", width: "100%"}}
                         />
                     </Col>
                     <Col className={'col-style-editor'} sm>
@@ -85,7 +86,7 @@ class Editor extends React.Component{
                         <div
                             className={'markdown-body'}
                             dangerouslySetInnerHTML={{__html: this.state.html}}
-                            style={{height: "90vh", overflowY: 'auto', maxHeight: "80vh", overflowX: 'auto'}}
+                            style={{height: "70vh", overflowY: 'auto', maxHeight: "80vh", overflowX: 'auto'}}
                         />
                     </Col>
                 </Row>
