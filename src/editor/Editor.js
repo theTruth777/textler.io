@@ -35,7 +35,7 @@ class Editor extends React.Component{
                     <Col sm>
                         <ButtonToolbar>
                             <DropdownButton size="sm" as={ButtonGroup} title="Download as..." id="bg-nested-dropdown" variant="success">
-                                <Dropdown.Item eventKey="1">Markdown</Dropdown.Item>
+                                <Dropdown.Item eventKey="1" onClick={() => this.downloadAsMarkdown()}>Markdown</Dropdown.Item>
                                 <Dropdown.Item eventKey="2">HTML</Dropdown.Item>
                                 <Dropdown.Item eventKey="3">PDF</Dropdown.Item>
                             </DropdownButton>
@@ -44,7 +44,7 @@ class Editor extends React.Component{
                                 Save session
                             </Button>
 
-                            <Button variant="danger" size="sm" className={'button-style'} onClick={element => {this.resetEditor(element)}}>
+                            <Button variant="danger" size="sm" className={'button-style'} onClick={() => {this.resetEditor()}}>
                                 Reset document
                             </Button>
 
@@ -104,8 +104,23 @@ class Editor extends React.Component{
         this.setState({value: value});
     }
 
-    resetEditor(element){
+    resetEditor(){
         this.onEditorContentChange('');
+    }
+
+    downloadAsMarkdown() {
+        let text = this.state.value;
+        let filename = 'document.md';
+        let element = document.createElement('a');
+        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+        element.setAttribute('download', filename);
+
+        element.style.display = 'none';
+        document.body.appendChild(element);
+
+        element.click();
+
+        document.body.removeChild(element);
     }
 }
 
