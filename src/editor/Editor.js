@@ -14,8 +14,8 @@ import 'github-markdown-css/github-markdown.css'
 import "bootstrap/dist/css/bootstrap.css";
 import './Editor.css';
 
-import Toolbar from '../toolbar/Toolbar';
-import EditorBody from './EditorBody';
+import Toolbar from './toolbar/Toolbar';
+import EditorBody from './body/EditorBody';
 
 class Editor extends React.Component{
     constructor(props) {
