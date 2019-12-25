@@ -1,16 +1,11 @@
 import React from 'react';
 
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-
-import MarkdownIt from 'markdown-it';
-
 import AceEditor from "react-ace";
 import "ace-builds/src-noconflict/mode-markdown";
 import "ace-builds/src-noconflict/theme-textmate";
-
 import 'github-markdown-css/github-markdown.css'
+
 import "bootstrap/dist/css/bootstrap.css";
 import './Editor.css';
 
