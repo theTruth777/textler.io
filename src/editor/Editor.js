@@ -15,12 +15,12 @@ import "bootstrap/dist/css/bootstrap.css";
 import './Editor.css';
 
 import Toolbar from '../toolbar/Toolbar';
+import EditorBody from './EditorBody';
 
 class Editor extends React.Component{
     constructor(props) {
         super(props);
         this.state = {value: '', html: ''};
-        this.md = new MarkdownIt({breaks: true});
         this.setEditorState = this.setEditorState.bind(this)
     }
 
@@ -37,54 +37,10 @@ class Editor extends React.Component{
             <Container fluid={true}>
 
                 <Toolbar markdownValue={this.state.value} setEditorState={this.setEditorState} htmlValue={this.state.html}/>
+                <EditorBody markdownValue={this.state.value} setEditorState={this.setEditorState} htmlValue={this.state.html}/>
 
-                <Row>
-                    <Col className={'col-style-editor'} sm>
-
-                        <div className={'editor-header'}>
-                            Markdown
-                        </div>
-
-                        <AceEditor
-                            mode="markdown"
-                            theme="textmate"
-                            wrapEnabled={true}
-                            fontSize={18}
-                            enableBasicAutocompletion={false}
-                            onChange={value => {
-                                this.onEditorContentChange(value);
-                            }}
-                            value={this.state.value}
-                            name="UNIQUE_ID_OF_DIV"
-                            editorProps={{ $blockScrolling: true}}
-                            style={{height: "70vh", overflowY: 'auto', maxHeight: "80vh", width: "100%"}}
-                        />
-                    </Col>
-                    <Col className={'col-style-editor'} sm>
-
-                        <div className={'editor-header'}>
-                            Preview
-                        </div>
-
-                        <div
-                            className={'markdown-body'}
-                            dangerouslySetInnerHTML={{__html: this.state.html}}
-                            style={{height: "70vh", overflowY: 'auto', maxHeight: "80vh", overflowX: 'auto'}}
-                        />
-                    </Col>
-                </Row>
             </Container>
         );
-    }
-
-    componentDidMount() {
-        this.onEditorContentChange("# Swagnuke \n load here the readme file of swagnuke!");
-    }
-
-    onEditorContentChange(value) {
-        let mdHtml = this.md.render(value);
-        this.setState({html: mdHtml});
-        this.setState({value: value});
     }
 
 
