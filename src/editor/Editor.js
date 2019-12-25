@@ -3,12 +3,6 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import DropdownButton from 'react-bootstrap/DropdownButton';
-import Dropdown from "react-bootstrap/Dropdown";
-import ButtonGroup from "react-bootstrap/ButtonGroup";
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import ButtonToolbar from "react-bootstrap/ButtonToolbar";
 
 import MarkdownIt from 'markdown-it';
 
@@ -20,41 +14,30 @@ import 'github-markdown-css/github-markdown.css'
 import "bootstrap/dist/css/bootstrap.css";
 import './Editor.css';
 
+import Toolbar from '../toolbar/Toolbar';
+
 class Editor extends React.Component{
     constructor(props) {
         super(props);
         this.state = {value: '', html: ''};
         this.md = new MarkdownIt({breaks: true});
+        this.setEditorState = this.setEditorState.bind(this)
+    }
+
+    setEditorState(value, html) {
+        this.setState({
+            value: value,
+            html: html
+        })
     }
 
     render() {
 
         return (
             <Container fluid={true}>
-                <Row>
-                    <Col sm>
-                        <ButtonToolbar>
-                            <DropdownButton size="sm" as={ButtonGroup} title="Download as..." id="bg-nested-dropdown" variant="success">
-                                <Dropdown.Item eventKey="1" onClick={() => this.downloadAsMarkdown()}>Markdown</Dropdown.Item>
-                                <Dropdown.Item eventKey="2">HTML</Dropdown.Item>
-                                <Dropdown.Item eventKey="3">PDF</Dropdown.Item>
-                            </DropdownButton>
 
-                            <Button variant="dark" size="sm" className={'button-style'} >
-                                Save session
-                            </Button>
+                <Toolbar markdownValue={this.state.value} setEditorState={this.setEditorState}/>
 
-                            <Button variant="danger" size="sm" className={'button-style'} onClick={() => {this.resetEditor()}}>
-                                Reset document
-                            </Button>
-
-                        </ButtonToolbar>
-
-                    </Col>
-                    <Col sm>
-                        Word Count
-                    </Col>
-                </Row>
                 <Row>
                     <Col className={'col-style-editor'} sm>
 
@@ -104,24 +87,7 @@ class Editor extends React.Component{
         this.setState({value: value});
     }
 
-    resetEditor(){
-        this.onEditorContentChange('');
-    }
 
-    downloadAsMarkdown() {
-        let text = this.state.value;
-        let filename = 'document.md';
-        let element = document.createElement('a');
-        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
-        element.setAttribute('download', filename);
-
-        element.style.display = 'none';
-        document.body.appendChild(element);
-
-        element.click();
-
-        document.body.removeChild(element);
-    }
 }
 
 export default Editor;
