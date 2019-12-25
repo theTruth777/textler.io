@@ -36,7 +36,7 @@ class Editor extends React.Component{
         return (
             <Container fluid={true}>
 
-                <Toolbar markdownValue={this.state.value} setEditorState={this.setEditorState}/>
+                <Toolbar markdownValue={this.state.value} setEditorState={this.setEditorState} htmlValue={this.state.html}/>
 
                 <Row>
                     <Col className={'col-style-editor'} sm>

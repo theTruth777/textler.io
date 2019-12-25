@@ -19,7 +19,7 @@ class Toolbar extends React.Component{
                     <ButtonToolbar>
                         <DropdownButton size="sm" as={ButtonGroup} title="Download as..." id="bg-nested-dropdown" variant="success">
                             <Dropdown.Item eventKey="1" onClick={() => this.downloadAsMarkdown()}>Markdown</Dropdown.Item>
-                            <Dropdown.Item eventKey="2">HTML</Dropdown.Item>
+                            <Dropdown.Item eventKey="2" onClick={() => this.downloadAsHtml()}>HTML</Dropdown.Item>
                             <Dropdown.Item eventKey="3">PDF</Dropdown.Item>
                         </DropdownButton>
 
@@ -41,10 +41,19 @@ class Toolbar extends React.Component{
         );
     }
 
+    downloadAsHtml(){
+        let text = this.props.htmlValue;
+        let filename = 'document.html';
+        this.downloadFile(text, filename);
+    }
 
     downloadAsMarkdown() {
         let text = this.props.markdownValue;
         let filename = 'document.md';
+        this.downloadFile(text, filename);
+    }
+
+    downloadFile(text, filename){
         let element = document.createElement('a');
         element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
         element.setAttribute('download', filename);
