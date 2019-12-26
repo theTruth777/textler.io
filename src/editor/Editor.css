@@ -31,3 +31,10 @@
     margin-left: 10px;
     width: 122px;
 }
+
+.document-name {
+    border-top:0;
+    border-left:0;
+    border-right:0;
+    border-radius:0;
+}

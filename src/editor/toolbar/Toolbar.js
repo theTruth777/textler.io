@@ -7,11 +7,12 @@ import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Form from 'react-bootstrap/Form';
+import '../Editor.css'
 
 class Toolbar extends React.Component{
     constructor(props) {
         super(props);
-        this.state = {documentName: 'Untitled'};
+        this.state = {documentName: 'Untitled Document'};
         this.documentNameInput = React.createRef();
     }
 
@@ -43,6 +44,7 @@ class Toolbar extends React.Component{
                         value={this.state.documentName}
                         onChange={() => {this.setDocumentName()}}
                         ref={this.documentNameInput}
+                        className={'document-name'}
                     />
                 </Col>
             </Row>
