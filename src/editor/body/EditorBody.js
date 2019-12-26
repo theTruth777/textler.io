@@ -2,7 +2,6 @@ import React from 'react';
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import AceEditor from "react-ace";
-import Container from "react-bootstrap/Container";
 import MarkdownIt from "markdown-it";
 
 class EditorBody extends React.Component {
