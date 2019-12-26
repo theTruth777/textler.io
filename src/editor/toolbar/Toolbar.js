@@ -6,8 +6,14 @@ import Dropdown from "react-bootstrap/Dropdown";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
+import Form from 'react-bootstrap/Form';
 
 class Toolbar extends React.Component{
+    constructor(props) {
+        super(props);
+        this.state = {documentName: 'Untitled'};
+        this.documentNameInput = React.createRef();
+    }
 
     render(){
         return(
@@ -32,21 +38,30 @@ class Toolbar extends React.Component{
 
                 </Col>
                 <Col sm>
-                    Word Count
+                    <Form.Control
+                        type="text"
+                        value={this.state.documentName}
+                        onChange={() => {this.setDocumentName()}}
+                        ref={this.documentNameInput}
+                    />
                 </Col>
             </Row>
         );
     }
 
+    setDocumentName(){
+        this.setState({documentName: this.documentNameInput.current.value});
+    }
+
     downloadAsHtml(){
-        let text = this.props.htmlValue;
-        let filename = 'document.html';
+        const text = this.props.htmlValue;
+        const filename = this.state.documentName;
         this.downloadFile(text, filename);
     }
 
     downloadAsMarkdown() {
-        let text = this.props.markdownValue;
-        let filename = 'document.md';
+        const text = this.props.markdownValue;
+        const filename = this.state.documentName;
         this.downloadFile(text, filename);
     }
 

@@ -16,7 +16,7 @@ class Editor extends React.Component{
     constructor(props) {
         super(props);
         this.state = {value: '', html: ''};
-        this.setEditorState = this.setEditorState.bind(this)
+        this.setEditorState = this.setEditorState.bind(this);
     }
 
     setEditorState(value, html) {
