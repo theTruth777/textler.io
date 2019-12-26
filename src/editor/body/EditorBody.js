@@ -52,12 +52,23 @@ class EditorBody extends React.Component {
     }
 
     componentDidMount() {
+        //load either the last document that the user wrote or the default swagnuke document
+        //if nothing else is defined.
+
+        if (localStorage.getItem("markdownValue") !== null){
+            this.onEditorContentChange(localStorage.getItem("markdownValue") );
+            return;
+        }
+
         this.onEditorContentChange("# Swagnuke \n load here the readme file of swagnuke!");
     }
 
     onEditorContentChange(value) {
         let mdHtml = this.md.render(value);
         this.props.setEditorState(value, mdHtml);
+
+        //Store the current markdown value in the browser local storage
+        localStorage.setItem('markdownValue', value);
     }
 
 }

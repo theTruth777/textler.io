@@ -68,6 +68,7 @@ class Toolbar extends React.Component{
 
     resetEditor(){
         this.props.setEditorState('', '');
+        localStorage.removeItem('markdownValue');
     }
 }
 
