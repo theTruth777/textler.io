@@ -51,8 +51,21 @@ class Toolbar extends React.Component{
         );
     }
 
+    componentDidMount() {
+        const defaultDocumentName = 'Untitled Document';
+
+        if (localStorage.getItem("documentName") !== null){
+            this.setState({documentName: localStorage.getItem("documentName")});
+            return;
+        }
+
+        this.setState({documentName: defaultDocumentName});
+        localStorage.setItem('documentName', defaultDocumentName);
+    }
+
     setDocumentName(){
         this.setState({documentName: this.documentNameInput.current.value});
+        localStorage.setItem('documentName', this.documentNameInput.current.value);
     }
 
     downloadAsHtml(){
@@ -82,6 +95,7 @@ class Toolbar extends React.Component{
 
     resetEditor(){
         this.props.setEditorState('', '');
+        this.state.documentName = 'Untitled Document';
         localStorage.removeItem('markdownValue');
     }
 }
