@@ -57,13 +57,13 @@ class Toolbar extends React.Component{
 
     downloadAsHtml(){
         const text = this.props.htmlValue;
-        const filename = this.state.documentName;
+        const filename = `${this.state.documentName}.html`;
         this.downloadFile(text, filename);
     }
 
     downloadAsMarkdown() {
         const text = this.props.markdownValue;
-        const filename = this.state.documentName;
+        const filename = `${this.state.documentName}.md`;
         this.downloadFile(text, filename);
     }
 
