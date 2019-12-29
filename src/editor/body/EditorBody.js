@@ -12,41 +12,43 @@ class EditorBody extends React.Component {
 
     render() {
         return(
-            <Row>
-                <Col className={'col-style-editor'} sm>
+            
+                <Row>
+                    <Col className={'col-style-editor'} sm>
 
-                    <div className={'editor-header'}>
-                        Markdown
-                    </div>
+                        <div className={'editor-header'}>
+                            Markdown
+                        </div>
 
-                    <AceEditor
-                        mode="markdown"
-                        theme="textmate"
-                        wrapEnabled={true}
-                        fontSize={18}
-                        enableBasicAutocompletion={false}
-                        onChange={value => {
-                            this.onEditorContentChange(value);
-                        }}
-                        value={this.props.markdownValue}
-                        name="UNIQUE_ID_OF_DIV"
-                        editorProps={{ $blockScrolling: true}}
-                        style={{height: "70vh", overflowY: 'auto', maxHeight: "80vh", width: "100%"}}
-                    />
-                </Col>
-                <Col className={'col-style-editor'} sm>
+                        <AceEditor
+                            mode="markdown"
+                            theme="textmate"
+                            wrapEnabled={true}
+                            fontSize={18}
+                            enableBasicAutocompletion={false}
+                            onChange={value => {
+                                this.onEditorContentChange(value);
+                            }}
+                            value={this.props.markdownValue}
+                            name="UNIQUE_ID_OF_DIV"
+                            editorProps={{ $blockScrolling: true}}
+                            style={{height: "75vh", overflowY: 'auto', maxHeight: "80vh", width: "100%"}}
+                        />
+                    </Col>
+                    <Col className={'col-style-editor'} sm>
 
-                    <div className={'editor-header'}>
-                        Preview
-                    </div>
+                        <div className={'editor-header'}>
+                            Preview
+                        </div>
 
-                    <div
-                        className={'markdown-body'}
-                        dangerouslySetInnerHTML={{__html: this.props.htmlValue}}
-                        style={{height: "70vh", overflowY: 'auto', maxHeight: "80vh", overflowX: 'auto'}}
-                    />
-                </Col>
-            </Row>
+                        <div
+                            className={'markdown-body'}
+                            dangerouslySetInnerHTML={{__html: this.props.htmlValue}}
+                            style={{height: "75vh", overflowY: 'auto', maxHeight: "80vh", overflowX: 'auto'}}
+                        />
+                    </Col>
+                </Row>
+              
         );
     }
 
@@ -59,7 +61,7 @@ class EditorBody extends React.Component {
             return;
         }
 
-        this.onEditorContentChange("# Swagnuke \n load here the readme file of swagnuke!");
+        this.onEditorContentChange("# Textler \n load here the readme file of textler.io!");
     }
 
     onEditorContentChange(value) {

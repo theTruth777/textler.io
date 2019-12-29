@@ -1,9 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Kulim+Park&display=swap');
+
 .form-control:focus {
     border-color: #ced4da!important;
     box-shadow: none!important;
 }
 
 #mainMenu {
-    margin-bottom:25px;
+    margin-bottom: 25px;
     color: #ffffff!important;
+    height: 5vh;
+}
+
+.nav-items{
+    font-family: 'Kulim Park', sans-serif;
+    text-transform: uppercase;
+    font-size: 14px;
 }

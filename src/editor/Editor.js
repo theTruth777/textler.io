@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Container from 'react-bootstrap/Container';
+
 import AceEditor from "react-ace";
 import "ace-builds/src-noconflict/mode-markdown";
 import "ace-builds/src-noconflict/theme-textmate";
@@ -29,12 +29,12 @@ class Editor extends React.Component{
     render() {
 
         return (
-            <Container fluid={true}>
+            <div>
 
                 <Toolbar markdownValue={this.state.value} setEditorState={this.setEditorState} htmlValue={this.state.html}/>
                 <EditorBody markdownValue={this.state.value} setEditorState={this.setEditorState} htmlValue={this.state.html}/>
 
-            </Container>
+            </div>
         );
     }
 
