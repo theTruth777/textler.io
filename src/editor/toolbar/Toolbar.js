@@ -14,7 +14,7 @@ class Toolbar extends React.Component{
         super(props);
         this.state = {documentName: null};
         this.documentNameInput = React.createRef();
-        this.defaultDocumentName = 'Untitled Document.md';
+        this.defaultDocumentName = 'Untitled Document';
     }
 
     componentDidMount() {
@@ -67,33 +67,20 @@ class Toolbar extends React.Component{
     render(){
         return(
             <Row>
-                <Col md={"auto"}>
-                    {/* <ButtonToolbar>
-                        <DropdownButton size="sm" as={ButtonGroup} title="Download as..." id="bg-nested-dropdown" variant="success">
+                <Col>
+                    <ButtonToolbar>
+                        <DropdownButton size="sm" as={ButtonGroup} title="Download as..." id="bg-nested-dropdown" variant="dark">
                             <Dropdown.Item eventKey="1" onClick={() => this.downloadAsMarkdown()}>Markdown</Dropdown.Item>
                             <Dropdown.Item eventKey="2" onClick={() => this.downloadAsHtml()}>HTML</Dropdown.Item>
                             <Dropdown.Item eventKey="3">PDF</Dropdown.Item>
                         </DropdownButton>
 
-                        <Button variant="dark" size="sm" className={'button-style'} >
-                            Save session
-                        </Button>
-
-                        <Button variant="danger" size="sm" className={'button-style'} onClick={() => {this.resetEditor()}}>
+                        <Button variant="dark" size="sm" className={'button-style'} onClick={() => {this.resetEditor()}}>
                             Reset document
                         </Button>
 
-                    </ButtonToolbar> */}
+                    </ButtonToolbar>
 
-                    <ButtonGroup>
-                        <Button size="sm" className={'button-style'}>Save Session</Button>
-                        <Button size="sm" className={'button-style'} onClick={() => {this.resetEditor()}}>Reset Document</Button>
-                        <DropdownButton as={ButtonGroup} title="Download as ..." id="bg-nested-dropdown" size="sm">
-                            <Dropdown.Item eventKey="1" onClick={() => this.downloadAsMarkdown()}>Markdown</Dropdown.Item>
-                            <Dropdown.Item eventKey="2" onClick={() => this.downloadAsHtml()}>HTML</Dropdown.Item>
-                            <Dropdown.Item eventKey="3">PDF</Dropdown.Item>
-                        </DropdownButton>
-                    </ButtonGroup>
                 </Col>    
                 
                 <Col>

@@ -1,15 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Kulim+Park&display=swap');
 
 #bg-nested-dropdown {
-    margin-left: 5px;
-    margin-bottom: 25px;
-    height: 40px;
-    width: 20vh;
-    color: #35d7bb;  
-    background-color: #343a40;
-    border: 1px solid #35d7bb;
-    font-weight: bold;
-
+    margin-bottom:25px;
 }
 
 .editor-header {
@@ -40,24 +32,9 @@
 }
 
 .button-style {
-    height: 40px;    
-    width: 18vh;  
-    color: #35d7bb;  
-    background-color: #343a40;
-    border: 1px solid #35d7bb;
-    font-weight: bold;
-}
-
-.button-style:hover{
-    background-color: #35d7bb;
-    color: #343a40;
-    border-color: #35d7bb;
-}
-
-.button-style:focus{
-    background-color: #35d7bb;
-    color: #343a40;
-    border-color: #35d7bb;
+    height: 31px;
+    margin-left: 10px;
+    width: 122px;
 }
 
 .document-name {

@@ -1,19 +1,20 @@
 import React from 'react';
 
-import {Navbar, Nav} from 'react-bootstrap';
+import {Navbar, Nav, NavDropdown} from 'react-bootstrap';
 
 import './Menu.css';
 
 class Menu extends React.Component{
     render() {
         return(
-            <Navbar bg="dark" id={'mainMenu'} expand="lg" variant="dark" className="justify-content-end">
-                <Navbar.Brand href="#home">Textler</Navbar.Brand>
+            <Navbar bg="dark" expand="lg" id={'mainMenu'} variant="dark">
+                <Navbar.Brand href="#home">Textler.IO</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="ml-auto nav-items">
-                        <Nav.Link href="#home">About</Nav.Link>
-                        <Nav.Link href="#link">Overview</Nav.Link>                        
+                    <Nav className="mr-auto">
+                        <Nav.Link href="#home">What is Textler.IO</Nav.Link>
+                        <Nav.Link href="#link">Markdown Overview</Nav.Link>
+                        <Nav.Link href="#github">Fork me on Github</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
