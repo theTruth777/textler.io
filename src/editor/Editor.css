@@ -44,3 +44,9 @@
     border-right:0;
     border-radius:0;
 }
+
+@media (max-width: 560px) {
+    .button-style {
+        margin-left: 0;
+    }
+}
