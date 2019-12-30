@@ -10,7 +10,7 @@ class Footer extends React.Component{
     render() {
         return(
             <Row>
-                <Col>
+                <Col id={'footer'}>
                     <div className="d-flex justify-content-center align-bottom">
                         <a href="https://github.com/EraTeam">
                             <FontAwesomeIcon icon={faGithubSquare} className="icon"/>                        
