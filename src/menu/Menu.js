@@ -48,7 +48,7 @@ class Menu extends React.Component{
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
                         <this.callModalAbout />
-                        <Nav.Link href="#link">Markdown Overview</Nav.Link>
+                        <Nav.Link target={'_blank'} href="https://www.markdownguide.org/basic-syntax/">Markdown Overview</Nav.Link>
                         <Nav.Link target={'_blank'} href="https://github.com/theTruth777/textler.io">Fork me on Github</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>

@@ -61,7 +61,24 @@ class EditorBody extends React.Component {
             return;
         }
 
-        this.onEditorContentChange("# Textler \n load here the readme file of textler.io!");
+        //TODO: put this somewhere else and not as a constant in the method
+        const textlerIoStartupText = "# Textler.IO\n" +
+            "\n" +
+            "Start writing your document content here. On the right side you will see the HTML output. \n" +
+            "\n" +
+            "---\n" +
+            "\n" +
+            "\n" +
+            "If you need some help, here are a few resources that might help you to get started:\n" +
+            "* [What is markdown?](https://en.wikipedia.org/wiki/Markdown)\n" +
+            "* [Markdown syntax overview](https://www.markdownguide.org/basic-syntax/)\n" +
+            "\n" +
+            "Last but not least, if you want to start writing a README.MD file, you might need a template for that. Checkout github user [@PurpleBooth](https://gist.github.com/PurpleBooth) template, for [writing a decent README file](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2).\n" +
+            "\n" +
+            "\n" +
+            "If you want to contribute to this project or host it for yourself, [checkout the repository here](https://github.com/theTruth777/textler.io).";
+
+        this.onEditorContentChange(textlerIoStartupText);
     }
 
     onEditorContentChange(value) {
