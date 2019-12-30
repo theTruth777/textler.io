@@ -40,7 +40,6 @@ class Menu extends React.Component{
     }
 
 
-
     render() {
         return(
             <Navbar bg="dark" expand="lg" id={'mainMenu'} variant="dark">
