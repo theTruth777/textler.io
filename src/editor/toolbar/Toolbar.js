@@ -32,10 +32,23 @@ class Toolbar extends Component {
         localStorage.setItem('documentName', this.documentNameInput.current.value);
     }
 
-    downloadAsHtml(){
+    downloadAsHtml(styled = false){
         const text = this.props.htmlValue;
         const filename = `${this.state.documentName}.html`;
-        this.downloadFile(text, filename);
+
+        let htmlDocument = null;
+        if(styled){
+            htmlDocument = "<html>\n<head>\n<link rel=\"stylesheet\" type=\"text/css\" href=\"https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/3.0.1/github-markdown.min.css\"><title>" +
+                filename +
+                "</title>\n</head>\n<body>\n" +
+                "<div class='markdown-body'>\n" +
+                text +
+                "</div></body>\n</html>";
+        }else{
+            htmlDocument = "<html>\n<head>\n<title>" + filename + "</title>\n</head>\n<body>\n" + text + "</body>\n</html>";
+        }
+
+        this.downloadFile(htmlDocument, filename);
     }
 
     downloadAsMarkdown() {
@@ -71,7 +84,8 @@ class Toolbar extends Component {
                     <ButtonToolbar className={'button-toolbar'}>
                         <DropdownButton size="sm" as={ButtonGroup} title="Download as..." id="bg-nested-dropdown" variant="dark">
                             <Dropdown.Item eventKey="1" onClick={() => this.downloadAsMarkdown()}>Markdown</Dropdown.Item>
-                            <Dropdown.Item eventKey="2" onClick={() => this.downloadAsHtml()}>HTML</Dropdown.Item>
+                            <Dropdown.Item eventKey="2" onClick={() => this.downloadAsHtml()}>Unstyled HTML</Dropdown.Item>
+                            <Dropdown.Item eventKey="3" onClick={() => this.downloadAsHtml(true)}>Styled HTML</Dropdown.Item>
                         </DropdownButton>
 
                         <Button variant="dark" size="sm" className={'button-style'} onClick={() => {this.resetEditor()}}>
