@@ -9,7 +9,7 @@ import { faGithubSquare } from '@fortawesome/free-brands-svg-icons'
 class Footer extends Component {
     render() {
         return(
-            <Row>
+            <Row className="fixed-bottom">
                 <Col id={'footer'}>
                     <div className="d-flex justify-content-center align-bottom">
                         <a href="https://github.com/EraTeam">

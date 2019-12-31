@@ -68,7 +68,7 @@ class Toolbar extends Component {
         return(
             <Row>
                 <Col>
-                    <ButtonToolbar>
+                    <ButtonToolbar className={'button-toolbar'}>
                         <DropdownButton size="sm" as={ButtonGroup} title="Download as..." id="bg-nested-dropdown" variant="dark">
                             <Dropdown.Item eventKey="1" onClick={() => this.downloadAsMarkdown()}>Markdown</Dropdown.Item>
                             <Dropdown.Item eventKey="2" onClick={() => this.downloadAsHtml()}>HTML</Dropdown.Item>

@@ -49,4 +49,12 @@
     .button-style {
         margin-left: 0;
     }
+
+    .button-toolbar{
+        margin-bottom: 15px;
+    }
+
+    #bg-nested-dropdown{
+        margin-bottom: 5px;
+    }
 }
