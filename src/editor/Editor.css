@@ -20,8 +20,8 @@
 
 .col-style-editor {
     border: 1px solid rgba(186, 186, 186, 0.53);
-    padding-left:0px;
-    padding-right:0px;
+    padding-left:0!important;
+    padding-right:0!important;
     border-left:0px;
     width:50%;
 }
@@ -39,10 +39,10 @@
 
 .document-name {
     font-style: italic;
-    border-top:0;
-    border-left:0;
-    border-right:0;
-    border-radius:0;
+    border-top:0!important;
+    border-left:0!important;;
+    border-right:0!important;;
+    border-radius:0!important;;
 }
 
 @media (max-width: 560px) {
