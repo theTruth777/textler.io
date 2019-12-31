@@ -14,14 +14,14 @@ class Menu extends React.Component{
 
         return (
             <>
-                <Nav.Link href="#home" onClick={handleShow}>What is Textler.IO</Nav.Link>
+                <Nav.Link href="#home" onClick={handleShow}>What is textler.io</Nav.Link>
 
                 <Modal show={show} onHide={handleClose}>
                     <Modal.Header closeButton>
-                        <Modal.Title>What is Textler.IO</Modal.Title>
+                        <Modal.Title>What is textler.io</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        Textler.IO is a simple markdown editor. It offers you
+                        textler.io is a simple markdown editor. It offers you
                         a direct preview of the markdown you have written.
                         You can also export your final result as an HTML or
                         PDF file.
@@ -43,7 +43,7 @@ class Menu extends React.Component{
     render() {
         return(
             <Navbar bg="dark" expand="lg" id={'mainMenu'} variant="dark">
-                <Navbar.Brand href="#home">Textler.IO</Navbar.Brand>
+                <Navbar.Brand href="#home">textler.io</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
