@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { Fragment, Component } from 'react';
 
-import {Navbar, Nav, NavDropdown, Modal, Row, Col, Container, Button} from 'react-bootstrap';
+import {
+    Navbar,
+    Nav,
+    Modal,
+    Button
+} from 'react-bootstrap';
 
 import './Menu.css';
 
-class Menu extends React.Component{
+class Menu extends Component {
 
     callModalAbout() {
         const [show, setShow] = React.useState(false);
@@ -13,7 +18,7 @@ class Menu extends React.Component{
         const handleShow = () => setShow(true);
 
         return (
-            <>
+            <Fragment>
                 <Nav.Link href="#home" onClick={handleShow}>What is textler.io</Nav.Link>
 
                 <Modal show={show} onHide={handleClose}>
@@ -35,7 +40,7 @@ class Menu extends React.Component{
                         </Button>
                     </Modal.Footer>
                 </Modal>
-            </>
+            </Fragment>
         );
     }
 

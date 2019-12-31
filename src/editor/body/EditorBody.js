@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import AceEditor from "react-ace";
 import MarkdownIt from "markdown-it";
 
-class EditorBody extends React.Component {
+class EditorBody extends Component {
     constructor(props) {
         super(props);
         this.md = new MarkdownIt({breaks: true});
@@ -12,7 +12,6 @@ class EditorBody extends React.Component {
 
     render() {
         return(
-            
                 <Row>
                     <Col className={'col-style-editor'} sm>
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ButtonToolbar from "react-bootstrap/ButtonToolbar";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
@@ -9,16 +9,16 @@ import Row from "react-bootstrap/Row";
 import Form from 'react-bootstrap/Form';
 import '../Editor.css'
 
-class Toolbar extends React.Component{
+class Toolbar extends Component {
     constructor(props) {
         super(props);
-        this.state = {documentName: null};
+        this.state = {documentName: ''};
         this.documentNameInput = React.createRef();
         this.defaultDocumentName = 'Untitled Document';
     }
 
     componentDidMount() {
-        if (localStorage.getItem("documentName") !== null){
+        if (localStorage.getItem("documentName") !== ''){
             this.setState({documentName: localStorage.getItem("documentName")});
             return;
         }
@@ -59,7 +59,7 @@ class Toolbar extends React.Component{
 
     resetEditor(){
         this.props.setEditorState('', '');
-        this.state.documentName = 'Untitled Document';
+        this.setState({documentName: 'Untitled Document'});
         localStorage.removeItem('markdownValue');
         localStorage.setItem('documentName', this.defaultDocumentName);
     }
