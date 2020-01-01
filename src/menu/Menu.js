@@ -19,7 +19,7 @@ class Menu extends Component {
 
         return (
             <Fragment>
-                <Nav.Link href="#home" onClick={handleShow}>What is textler.io</Nav.Link>
+                <Nav.Link active={false} onClick={handleShow}>What is textler.io</Nav.Link>
 
                 <Modal show={show} onHide={handleClose}>
                     <Modal.Header closeButton>
@@ -53,8 +53,8 @@ class Menu extends Component {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
                         <this.callModalAbout />
-                        <Nav.Link target={'_blank'} href="https://www.markdownguide.org/basic-syntax/">Markdown Overview</Nav.Link>
-                        <Nav.Link target={'_blank'} href="https://github.com/theTruth777/textler.io">Fork me on Github</Nav.Link>
+                        <Nav.Link active={false}  target={'_blank'} href="https://www.markdownguide.org/basic-syntax/">Markdown Overview</Nav.Link>
+                        <Nav.Link active={false}  target={'_blank'} href="https://github.com/theTruth777/textler.io">Fork me on Github</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
