@@ -31,7 +31,7 @@ class EditorBody extends Component {
                             value={this.props.markdownValue}
                             name="UNIQUE_ID_OF_DIV"
                             editorProps={{ $blockScrolling: true}}
-                            style={{height: "75vh", overflowY: 'auto', maxHeight: "80vh", width: "100%"}}
+                            style={{height: "69vh", overflowY: 'auto', maxHeight: "69vh", width: "100%"}}
                         />
                     </Col>
                     <Col className={'col-style-editor'} sm>
@@ -43,7 +43,7 @@ class EditorBody extends Component {
                         <div
                             className={'markdown-body'}
                             dangerouslySetInnerHTML={{__html: this.props.htmlValue}}
-                            style={{height: "75vh", overflowY: 'auto', maxHeight: "80vh", overflowX: 'auto'}}
+                            style={{height: "69vh", overflowY: 'auto', maxHeight: "69vh", overflowX: 'auto'}}
                         />
                     </Col>
                 </Row>
