@@ -27,9 +27,18 @@ class Editor extends Component {
 
     render() {
         return (
-            <div>
-                <Toolbar markdownValue={this.state.value} setEditorState={this.setEditorState} htmlValue={this.state.html}/>
-                <EditorBody markdownValue={this.state.value} setEditorState={this.setEditorState} htmlValue={this.state.html}/>
+            <div className={'editor-container'}>
+                <Toolbar 
+                    markdownValue={this.state.value} 
+                    setEditorState={this.setEditorState} 
+                    htmlValue={this.state.html}
+                    className={'toolbar'}/>
+                <EditorBody 
+                    markdownValue={this.state.value} 
+                    setEditorState={this.setEditorState} 
+                    htmlValue={this.state.html}
+                    className={'editor-body'}
+                    />
             </div>
         );
     }

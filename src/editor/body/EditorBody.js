@@ -12,8 +12,8 @@ class EditorBody extends Component {
 
     render() {
         return(
-                <Row>
-                    <Col className={'col-style-editor'} sm>
+                <Row >
+                    <Col className={'col-ace-editor'} sm>
 
                         <div className={'editor-header'}>
                             Markdown
@@ -29,22 +29,24 @@ class EditorBody extends Component {
                                 this.onEditorContentChange(value);
                             }}
                             value={this.props.markdownValue}
-                            name="UNIQUE_ID_OF_DIV"
-                            editorProps={{ $blockScrolling: true}}
-                            style={{height: "69vh", overflowY: 'auto', maxHeight: "69vh", width: "100%"}}
+                            name="ace"
+                            editorProps={{ $blockScrolling: true}}                                                       
+                            style={{height: '93%', maxHeight: '94%', overflowY: 'auto', width: "100%"}}
                         />
                     </Col>
-                    <Col className={'col-style-editor'} sm>
+                    <Col className={'col-markdown-view'} sm>
 
                         <div className={'editor-header'}>
                             Preview
                         </div>
 
-                        <div
-                            className={'markdown-body'}
-                            dangerouslySetInnerHTML={{__html: this.props.htmlValue}}
-                            style={{height: "69vh", overflowY: 'auto', maxHeight: "69vh", overflowX: 'auto'}}
-                        />
+                        <div className={'markdown-content'}>
+                            <div
+                                className={'markdown-body'}
+                                dangerouslySetInnerHTML={{__html: this.props.htmlValue}}
+                                style={{height: '93%', maxHeight: '94%', overflowY: 'auto', width: "100%"}}
+                            />
+                        </div>
                     </Col>
                 </Row>
               

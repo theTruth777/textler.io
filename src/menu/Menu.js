@@ -47,7 +47,7 @@ class Menu extends Component {
 
     render() {
         return(
-            <Navbar bg="dark" expand="lg" id={'mainMenu'} variant="dark">
+            <Navbar bg="dark" expand="sm" id={'mainMenu'} variant="dark">
                 <Navbar.Brand href="#home">textler.io</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
