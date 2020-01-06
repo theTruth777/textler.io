@@ -6,19 +6,23 @@ import MarkdownIt from "markdown-it";
 
 class EditorBody extends Component {
     constructor(props) {
-        super(props);
+        super(props);        
         this.md = new MarkdownIt({breaks: true});
     }
 
     render() {
-        return(
-                <Row >
-                    <Col className={'col-ace-editor'} sm>
-
-                        <div className={'editor-header'}>
-                            Markdown
-                        </div>
-
+        return(  
+            <div className={'splitted-editor'}>
+                <Row>
+                    <div className={'editor-header ace-header'}>
+                        Markdown
+                    </div>
+                    <div className={'editor-header preview-header'}>
+                        Preview
+                    </div>
+                </Row>
+                <Row className={'editor'}>                
+                    <div className={'ace-editor'}>                
                         <AceEditor
                             mode="markdown"
                             theme="textmate"
@@ -27,29 +31,24 @@ class EditorBody extends Component {
                             enableBasicAutocompletion={false}
                             onChange={value => {
                                 this.onEditorContentChange(value);
-                            }}
+                            }}  
                             value={this.props.markdownValue}
                             name="ace"
-                            editorProps={{ $blockScrolling: true}}                                                       
-                            style={{height: '94%', maxHeight: '94%', overflowY: 'auto', width: "100%"}}
+                            editorProps={{ $blockScrolling: true}}                                                                                        
+                            style={{height: '100%', overflowY: 'auto', width: "100%"}}
+                        />
+                    </div> 
+                    <div className={'editor-header mobile-preview-header'}>Preview</div>              
+                    <Col className={'preview'}>
+                        <div
+                            className={'markdown-body'}
+                            dangerouslySetInnerHTML={{__html: this.props.htmlValue}}
+                            style={{height: "100%", overflowY: 'auto', width: "100%"}}
                         />
                     </Col>
-                    <Col className={'col-markdown-view'} sm>
-
-                        <div className={'editor-header'}>
-                            Preview
-                        </div>
-
-                        <div className={'markdown-content'}>
-                            <div
-                                className={'markdown-body'}
-                                dangerouslySetInnerHTML={{__html: this.props.htmlValue}}
-                                style={{height: '94%', maxHeight: '94%', overflowY: 'auto', width: "100%"}}
-                            />
-                        </div>
-                    </Col>
-                </Row>
-              
+                </Row>              
+            </div>          
+            
         );
     }
 
