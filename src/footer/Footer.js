@@ -12,9 +12,10 @@ class Footer extends Component {
             <Row id={'footer'}>
                 <Col sm>
                     <div className="d-flex justify-content-center">
-                        <a href="https://github.com/EraTeam" target={'_blank'}>
-                            <FontAwesomeIcon icon={faGithubSquare} className="icon"/>                        
-                        </a>
+
+                        {/*TODO: This is just a placeholder until the real footer is ready */}
+                        <div style={{height: "30px"}} />
+
                     </div>
                 </Col>
             </Row>
