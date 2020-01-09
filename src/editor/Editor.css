@@ -84,9 +84,6 @@
     font-size: 12px;
     text-transform: uppercase;
     border: 1px solid rgba(186, 186, 186, 0.53);
-    border-top: 0px;
-    border-left:0px;
-    border-right:0px;
     color: rgba(33, 33, 33, 0.85);   
     width: 50%; 
 }
