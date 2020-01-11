@@ -16,7 +16,7 @@ class App extends React.Component{
                     <Editor className={'editor'}/>                                                                                                                                                                                            
                 </Container> 
                 <Container fluid>
-                    <Footer className={'footer'}/>                 
+                    <Footer className={'footer'}/>
                 </Container>
             </div>            
         )
