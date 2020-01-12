@@ -36,6 +36,7 @@ class EditorBody extends Component {
                             name="ace"
                             editorProps={{ $blockScrolling: true}}                                                                                        
                             style={{height: '100%', overflowY: 'auto', width: "100%"}}
+                            showPrintMargin={false}
                         />
                     </div> 
                     <div className={'editor-header mobile-preview-header'}>Preview</div>              
