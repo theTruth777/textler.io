@@ -1,6 +1,6 @@
 # textler.io
 
-textler.io is a web based markdown editor, for writing and editing markdown files. It also gives you the option to export download your final result as a markdown or html file.
+textler.io is a web based markdown editor for writing and editing markdown files. It also gives you the option to download your final result as a markdown or html file.
 
 ## Getting Started
 
@@ -8,28 +8,28 @@ If you want to setup the project on your local machine, you need to follow the f
 
 ### Prerequisites
 
-In order to run textler.io on you machine you need yarn. Yarn is a dependency manager.
+In order to run textler.io on your machine you will need docker. Docker is a container virtualization software. If you wan't to find out more about docker, take a look at these ressources:
 
-* [Learn more about yarn](https://yarnpkg.com/en/docs/getting-started)
-* [Install yarn on your system](https://yarnpkg.com/lang/en/docs/install/)
+* [About docker](https://www.docker.com/why-docker)
+* [Install docker on your system](https://docs.docker.com/install/)
+
+You will also need docker-compose. [See this link here to learn more about it](https://docs.docker.com/compose/).
 
 
 ### Installing
 
 Clone the repository to your machine and run the following command from the project root:
 
+```
+$ docker-compose build
+```
+Once the container has been build and all dependencies are satisfied, you have to run the following command to launch the container:
 
 ```
-$ yarn install
+$ docker-compose up
 ```
 
-Once all dependencies are satisfied, you can launch the local node server by running the following command:
-
-```
-$ yarn start
-```
-
-After that, the local server will launch and listen to requests coming in from port 3000.
+After that, the container will launch and expose port 3000. You can then open textler.io in your browser, by calling the following url: localhost:3000.
 
 
 ## Deployment
