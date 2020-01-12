@@ -34,7 +34,7 @@ After that, the container will launch and expose port 3000. You can then open te
 
 ## Deployment
 
-If you want to build textler.io for production, you have to run the following command from the project root:
+If you want to build textler.io for production, you have to run the following command from the inside of the container:
 
 ```
 $ yarn build
