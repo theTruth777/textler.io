@@ -25,11 +25,11 @@ class Menu extends Component {
                     <Modal.Header closeButton>
                         <Modal.Title>What is textler.io</Modal.Title>
                     </Modal.Header>
-                    <Modal.Body>
+                    <Modal.Body>                        
                         textler.io is a simple markdown editor. It offers you
                         a direct preview of the markdown you have written.
-                        You can also export your final result as an HTML or
-                        PDF file.
+                        You can also export your final result as an styled or
+                        unstyled HTML file.                        
 
                         If you don't know what the markdown syntax is,
                         checkout this <a target={'_blank'} href={'https://en.wikipedia.org/wiki/Markdown'}>Wikipedia article here</a>.
@@ -48,7 +48,7 @@ class Menu extends Component {
     render() {
         return(
             <Navbar bg="dark" expand="sm" id={'mainMenu'} variant="dark">
-                <Navbar.Brand href="#home">textler.io</Navbar.Brand>
+                <Navbar.Brand href="/">textler.io</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">

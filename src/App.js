@@ -19,7 +19,7 @@ class App extends React.Component{
                     <Footer className={'footer'}/>
                 </Container>
             </div>            
-        )
+        )        
     }
 }
 
