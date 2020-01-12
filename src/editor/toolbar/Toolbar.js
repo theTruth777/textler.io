@@ -18,7 +18,7 @@ class Toolbar extends Component {
     }
 
     componentDidMount() {
-        if (localStorage.getItem("documentName") !== ''){
+        if (localStorage.getItem("documentName") !== null){
             this.setState({documentName: localStorage.getItem("documentName")});
             return;
         }
