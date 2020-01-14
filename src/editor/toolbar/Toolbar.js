@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component, Fragment} from 'react';
 import ButtonToolbar from "react-bootstrap/ButtonToolbar";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
@@ -8,6 +8,7 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Form from 'react-bootstrap/Form';
 import '../Editor.css'
+import {Modal, Nav} from "react-bootstrap";
 
 class Toolbar extends Component {
     constructor(props) {
@@ -77,6 +78,44 @@ class Toolbar extends Component {
         localStorage.setItem('documentName', this.defaultDocumentName);
     }
 
+    callLoadTemplateModal() {
+        const [show, setShow] = React.useState(false);
+
+        const handleClose = () => setShow(false);
+        const handleShow = () => setShow(true);
+
+        return (
+            <Fragment>
+
+                <Button variant="dark" size="sm" className={'button-style'} active={false} onClick={handleShow}>
+                    Load Template
+                </Button>
+
+                <Modal show={show} onHide={handleClose}>
+                    <Modal.Header closeButton>
+                        <Modal.Title>Load Template</Modal.Title><br />
+                    </Modal.Header>
+                    <Modal.Body>
+                        Load a markdown template to get your session started from below.< br />
+
+                        <b>README.MD Template</b>
+                        <p>
+                            Use <a href={"https://gist.github.com/PurpleBooth"} target={"_blank"}>@PurpleBooth</a> template for creating a basic
+                            README.MD file.
+                        </p>
+                        <Button variant="primary" size="sm">Download</Button>
+
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <Button variant="secondary" onClick={handleClose}>
+                            Close
+                        </Button>
+                    </Modal.Footer>
+                </Modal>
+            </Fragment>
+        );
+    }
+
     render(){
         return(
             <Row>
@@ -87,6 +126,8 @@ class Toolbar extends Component {
                             <Dropdown.Item eventKey="2" onClick={() => this.downloadAsHtml()}>Unstyled HTML</Dropdown.Item>
                             <Dropdown.Item eventKey="3" onClick={() => this.downloadAsHtml(true)}>Styled HTML</Dropdown.Item>
                         </DropdownButton>
+
+                        <this.callLoadTemplateModal />
 
                         <Button variant="dark" size="sm" className={'button-style'} onClick={() => {this.resetEditor()}}>
                             Reset document
