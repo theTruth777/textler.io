@@ -8,7 +8,7 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Form from 'react-bootstrap/Form';
 import '../Editor.css'
-import {Modal, Nav} from "react-bootstrap";
+import {Modal} from "react-bootstrap";
 
 class Toolbar extends Component {
     constructor(props) {
