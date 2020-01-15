@@ -16,6 +16,7 @@ class Toolbar extends Component {
         this.state = {documentName: ''};
         this.documentNameInput = React.createRef();
         this.defaultDocumentName = 'Untitled Document';
+        this.callLoadTemplateModal = this.callLoadTemplateModal.bind(this);
     }
 
     componentDidMount() {
@@ -103,7 +104,7 @@ class Toolbar extends Component {
                             Use <a href={"https://gist.github.com/PurpleBooth"} target={"_blank"}>@PurpleBooth</a> template for creating a basic
                             README.MD file.
                         </p>
-                        <Button variant="primary" size="sm">Download</Button>
+                        <Button variant="primary" size="sm" onClick={() => this.downloadTemplate('')}>Download</Button>
 
                     </Modal.Body>
                     <Modal.Footer>
@@ -114,6 +115,10 @@ class Toolbar extends Component {
                 </Modal>
             </Fragment>
         );
+    }
+
+    downloadTemplate(source){
+
     }
 
     render(){
