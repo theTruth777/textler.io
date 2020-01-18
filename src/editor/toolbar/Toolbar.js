@@ -135,7 +135,7 @@ class Toolbar extends Component {
                         <this.callLoadTemplateModal />
 
                         <Button variant="dark" size="sm" className={'button-style'} onClick={() => {this.resetEditor()}}>
-                            Reset document
+                            Reset
                         </Button>
 
                     </ButtonToolbar>
