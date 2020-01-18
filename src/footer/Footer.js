@@ -11,8 +11,9 @@ class Footer extends Component {
                     <div className="d-flex justify-content-center">
 
                         {/*TODO: This is just a placeholder until the real footer is ready */}
-                        <div style={{height: "30px"}} />
-
+                        <div className={'footer-content'}>
+                            Character count:
+                        </div>
                     </div>
                 </Col>
             </Row>
