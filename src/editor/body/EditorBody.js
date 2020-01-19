@@ -91,6 +91,17 @@ const EditorBody = observer(class EditorBody extends Component {
         //Store the current markdown value in the browser local storage
         localStorage.setItem('markdownValue', value);
         this.props.store.characterCount = value.length;
+
+        const words = value.split(/\s|\n/);
+        const wordsLen = words.length;
+
+        if(words[wordsLen - 1] === ''){
+            this.props.store.wordsCount = wordsLen - 1;
+            return;
+        }
+
+        this.props.store.wordsCount = wordsLen;
+
     }
 
 });
