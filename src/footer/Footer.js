@@ -14,7 +14,7 @@ const Footer = observer(class Footer extends Component {
 
                         {/*TODO: This is just a placeholder until the real footer is ready */}
                         <div className={'footer-content'}>
-                            Character: {this.props.store.characterCount} |
+                            Characters: {this.props.store.characterCount} |
                             Words: {this.props.store.wordsCount}
                         </div>
                     </div>
