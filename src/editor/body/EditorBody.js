@@ -4,7 +4,9 @@ import Col from "react-bootstrap/Col";
 import AceEditor from "react-ace";
 import MarkdownIt from "markdown-it";
 
-class EditorBody extends Component {
+import {observer} from 'mobx-react';
+
+const EditorBody = observer(class EditorBody extends Component {
     constructor(props) {
         super(props);
         this.md = new MarkdownIt({breaks: true});
@@ -88,8 +90,9 @@ class EditorBody extends Component {
 
         //Store the current markdown value in the browser local storage
         localStorage.setItem('markdownValue', value);
+        this.props.store.characterCount = value.length;
     }
 
-}
+});
 
 export default EditorBody;

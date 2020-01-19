@@ -77,6 +77,7 @@ class Toolbar extends Component {
         this.setState({documentName: 'Untitled Document'});
         localStorage.removeItem('markdownValue');
         localStorage.setItem('documentName', this.defaultDocumentName);
+        this.props.store.characterCount = 0;
     }
 
     callLoadTemplateModal() {

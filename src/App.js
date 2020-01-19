@@ -6,6 +6,8 @@ import Footer from './footer/Footer';
 import Container from 'react-bootstrap/Container';
 import './App.css';
 
+import store from './MobxStore'
+
 class App extends React.Component{
 
     render() {
@@ -13,10 +15,10 @@ class App extends React.Component{
             <div className={'grid-container'}>
                 <Menu className={'menu'} />                                                             
                 <Container fluid >                    
-                    <Editor className={'editor'}/>                                                                                                                                                                                            
+                    <Editor store={store} className={'editor'}/>
                 </Container> 
                 <Container fluid>
-                    <Footer className={'footer'}/>
+                    <Footer store={store} className={'footer'}/>
                 </Container>
             </div>            
         )        

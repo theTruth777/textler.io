@@ -7,6 +7,7 @@ import AceEditor from "react-ace";
 import "ace-builds/src-noconflict/mode-markdown";
 import "ace-builds/src-noconflict/theme-textmate";
 import './Editor.css';
+import store from "../MobxStore";
 
 
 class Editor extends Component {
@@ -30,12 +31,15 @@ class Editor extends Component {
                     markdownValue={this.state.value} 
                     setEditorState={this.setEditorState} 
                     htmlValue={this.state.html}
-                    className={'toolbar'}/>
+                    className={'toolbar'}
+                    store={store}
+                />
                 <EditorBody 
                     markdownValue={this.state.value} 
                     setEditorState={this.setEditorState} 
                     htmlValue={this.state.html}
                     className={'editor-body'}
+                    store={this.props.store}
                     />
             </div>
         );

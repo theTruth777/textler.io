@@ -3,7 +3,9 @@ import './Footer.css';
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-class Footer extends Component {
+import {observer} from "mobx-react";
+
+const Footer = observer(class Footer extends Component {
     render() {
         return(
             <Row id={'footer'}>
@@ -12,13 +14,13 @@ class Footer extends Component {
 
                         {/*TODO: This is just a placeholder until the real footer is ready */}
                         <div className={'footer-content'}>
-                            Character count:
+                            Character count: {this.props.store.characterCount}
                         </div>
                     </div>
                 </Col>
             </Row>
         );
     }
-}
+});
 
 export default Footer;
