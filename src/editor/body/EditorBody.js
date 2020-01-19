@@ -56,7 +56,7 @@ const EditorBody = observer(class EditorBody extends Component {
     }
 
     componentDidMount() {
-        //load either the last document that the user wrote or the default swagnuke document
+        //load either the last document that the user wrote or the default textler document
         //if nothing else is defined.
 
         if (localStorage.getItem("markdownValue") !== null){
