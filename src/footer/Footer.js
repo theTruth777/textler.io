@@ -11,8 +11,6 @@ const Footer = observer(class Footer extends Component {
             <Row id={'footer'}>
                 <Col sm>
                     <div className="d-flex justify-content-center">
-
-                        {/*TODO: This is just a placeholder until the real footer is ready */}
                         <div className={'footer-content'}>
                             Characters: {this.props.store.characterCount} |
                             Words: {this.props.store.wordsCount}
