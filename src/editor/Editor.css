@@ -74,6 +74,7 @@
 
 #bg-nested-dropdown {
     margin-bottom: 25px;
+    width: 122px;
 }
 
 .editor-header {
@@ -95,6 +96,7 @@
 @media (max-width: 560px) {
     .button-style {
         margin-left: 0;
+        margin-top: 5px;
     }
 
     .button-toolbar{
@@ -102,7 +104,7 @@
     }
 
     #bg-nested-dropdown{
-        margin-bottom: 5px;
+        margin-bottom: 0;
     }
 
     .editor{        

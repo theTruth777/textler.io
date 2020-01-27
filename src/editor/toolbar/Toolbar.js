@@ -1,12 +1,6 @@
 import React, { Component } from 'react';
-import ButtonToolbar from "react-bootstrap/ButtonToolbar";
-import DropdownButton from "react-bootstrap/DropdownButton";
-import ButtonGroup from "react-bootstrap/ButtonGroup";
-import Dropdown from "react-bootstrap/Dropdown";
-import Button from "react-bootstrap/Button";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
-import Form from 'react-bootstrap/Form';
+import { ButtonToolbar, DropdownButton, ButtonGroup, Dropdown, Button, Col, Row, Form } from 'react-bootstrap';
+
 import '../Editor.css'
 
 class Toolbar extends Component {
@@ -75,6 +69,8 @@ class Toolbar extends Component {
         this.setState({documentName: 'Untitled Document'});
         localStorage.removeItem('markdownValue');
         localStorage.setItem('documentName', this.defaultDocumentName);
+        this.props.store.characterCount = 0;
+        this.props.store.wordsCount = 0;
     }
 
     render(){
@@ -89,7 +85,7 @@ class Toolbar extends Component {
                         </DropdownButton>
 
                         <Button variant="dark" size="sm" className={'button-style'} onClick={() => {this.resetEditor()}}>
-                            Reset document
+                            Reset
                         </Button>
 
                     </ButtonToolbar>

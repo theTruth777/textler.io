@@ -4,9 +4,11 @@ import Col from "react-bootstrap/Col";
 import AceEditor from "react-ace";
 import MarkdownIt from "markdown-it";
 
-class EditorBody extends Component {
+import { observer } from 'mobx-react';
+
+const EditorBody = observer(class EditorBody extends Component {
     constructor(props) {
-        super(props);        
+        super(props);
         this.md = new MarkdownIt({breaks: true});
     }
 
@@ -54,7 +56,7 @@ class EditorBody extends Component {
     }
 
     componentDidMount() {
-        //load either the last document that the user wrote or the default swagnuke document
+        //load either the last document that the user wrote or the default textler document
         //if nothing else is defined.
 
         if (localStorage.getItem("markdownValue") !== null){
@@ -88,8 +90,20 @@ class EditorBody extends Component {
 
         //Store the current markdown value in the browser local storage
         localStorage.setItem('markdownValue', value);
+        this.props.store.characterCount = value.length;
+
+        const words = value.split(/\s|\n/);
+        const wordsLen = words.length;
+
+        if(words[wordsLen - 1] === ''){
+            this.props.store.wordsCount = wordsLen - 1;
+            return;
+        }
+
+        this.props.store.wordsCount = wordsLen;
+
     }
 
-}
+});
 
 export default EditorBody;

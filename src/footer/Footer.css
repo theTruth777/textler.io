@@ -8,3 +8,10 @@
     position: relative;
     background-color: #343a40 !important;        
 }
+
+.footer-content {
+    color: #ffffff;
+    font-size: 12px;
+    padding-top: 8px;
+    height: 30px
+}
