@@ -3,7 +3,7 @@ import './Footer.css';
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-import {observer} from "mobx-react";
+import { observer } from "mobx-react";
 
 const Footer = observer(class Footer extends Component {
     render() {

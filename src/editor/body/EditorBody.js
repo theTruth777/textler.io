@@ -4,7 +4,7 @@ import Col from "react-bootstrap/Col";
 import AceEditor from "react-ace";
 import MarkdownIt from "markdown-it";
 
-import {observer} from 'mobx-react';
+import { observer } from 'mobx-react';
 
 const EditorBody = observer(class EditorBody extends Component {
     constructor(props) {
