@@ -1,14 +1,7 @@
-import React, {Component, Fragment} from 'react';
-import ButtonToolbar from "react-bootstrap/ButtonToolbar";
-import DropdownButton from "react-bootstrap/DropdownButton";
-import ButtonGroup from "react-bootstrap/ButtonGroup";
-import Dropdown from "react-bootstrap/Dropdown";
-import Button from "react-bootstrap/Button";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
-import Form from 'react-bootstrap/Form';
+import React, { Component } from 'react';
+import { ButtonToolbar, DropdownButton, ButtonGroup, Dropdown, Button, Col, Row, Form } from 'react-bootstrap';
+
 import '../Editor.css'
-import {Modal} from "react-bootstrap";
 
 class Toolbar extends Component {
     constructor(props) {
