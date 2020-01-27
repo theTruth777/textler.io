@@ -10,5 +10,5 @@ decorate(Store, {
     wordsCount: observable
 });
 
-let store = new Store();
+const store = new Store();
 export default store;
