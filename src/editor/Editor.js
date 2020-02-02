@@ -2,22 +2,25 @@ import React, { Component } from 'react';
 import Toolbar from './toolbar/Toolbar';
 import EditorBody from './body/EditorBody';
 
-import AceEditor from "react-ace";
-import "ace-builds/src-noconflict/mode-markdown";
-import "ace-builds/src-noconflict/theme-textmate";
+import AceEditor from 'react-ace';
+import 'ace-builds/src-noconflict/mode-markdown';
+import 'ace-builds/src-noconflict/theme-textmate';
 import './Editor.css';
 
 class Editor extends Component {
     constructor(props) {
         super(props);
-        this.state = {value: '', html: ''};
+        this.state = {
+            markdownContent: '',
+            html: ''
+        };
         this.setEditorState = this.setEditorState.bind(this);
     }
 
-    setEditorState(value, html) {
+    setEditorState(markdownContent, html) {
         this.setState({
-            value: value,
-            html: html
+            markdownContent,
+            html
         })
     }
 
@@ -25,14 +28,14 @@ class Editor extends Component {
         return (
             <div className={'editor-container'}>
                 <Toolbar 
-                    markdownValue={this.state.value} 
+                    markdownValue={this.state.markdownContent}
                     setEditorState={this.setEditorState} 
                     htmlValue={this.state.html}
                     className={'toolbar'}
                     store={this.props.store}
                 />
                 <EditorBody 
-                    markdownValue={this.state.value} 
+                    markdownValue={this.state.markdownContent}
                     setEditorState={this.setEditorState} 
                     htmlValue={this.state.html}
                     className={'editor-body'}
