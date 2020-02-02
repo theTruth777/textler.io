@@ -1,17 +1,17 @@
-.icon{    
+.icon {
     margin-top: 3px;
     font-size: 30px;
-    color: 	#A9A9A9;
+    color: #A9A9A9;
 }
 
-#footer {    
+#footer {
     position: relative;
-    background-color: #343a40 !important;        
+    background-color: #343a40 !important;
 }
 
 .footer-content {
+    height: 30px;
+    padding-top: 8px;
     color: #ffffff;
     font-size: 12px;
-    padding-top: 8px;
-    height: 30px
 }
