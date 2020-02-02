@@ -48,6 +48,14 @@
     align-items: baseline;
 }
 
+.button-toolbar > * {
+    margin-left: 5px;
+}
+
+.button-toolbar > *:first-child {
+    margin-left: 0;
+}
+
 .document-name {
     font-style: italic;
     border-top: 0 !important;
