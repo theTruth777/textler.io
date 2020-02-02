@@ -92,7 +92,7 @@ class Toolbar extends Component {
                 <Dropdown.Item eventKey="3" onClick={() => this.downloadAsHtml(true)}>Styled HTML</Dropdown.Item>
               </DropdownButton>
 
-              <Button variant="link" size="sm" onClick={() => {
+              <Button variant="outline-dark" size="sm" onClick={() => {
                 this.resetEditor()
               }}>
                 Reset
